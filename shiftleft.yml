@@ -44,9 +44,9 @@ jobs:
           CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
           CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
         run: |
-          git clone https://github.com/chkp-rolandop/demo-app
-          docker build -t rolandopcp/myapp ./demo-app
-          docker save -o myapp.tar rolandopcp/myapp
+          git clone https://github.com/chkp-saadkhadoory/demo-app
+          docker build -t saadkhadoory/myapp ./demo-app
+          docker save -o myapp.tar saadkhadoory/myapp
           chmod +x ./shiftleft
           ./shiftleft image-scan -i myapp.tar
 
@@ -59,6 +59,6 @@ jobs:
           CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
           CHKP_CLOUDGUARD_SECRET: ${{secrets.CHKP_CLOUDGUARD_SECRET }}
         run: |
-          git clone https://github.com/chkp-rolandop/demo-app
+          git clone https://github.com/chkp-saadkhadoory/demo-app
           chmod +x ./shiftleft
           ./shiftleft iac-assessment -r -64 -p ./demo-app/terraform-template
